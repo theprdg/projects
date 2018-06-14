@@ -1,41 +1,90 @@
-var pickedTime = 0.0,
+var pickedTime = 0.05, //time selected/inputted by user
   minutes,
   seconds,
-  isPaused = true,
-  firstClick = true,
-  globalTime,
-  lastPickedTime = 0.0,
-  timeInterval,
-  times = document.querySelectorAll(".time"),
-  inputTime = document.getElementById('value'),
-  clock = document.getElementById("clock"),
+  isPaused = true, //verify if timer is paused
+  firstClick = true, //apply specific attributes if first time clicking 'play'
+  timeInterval, //contains setInterval()
+  times = document.querySelectorAll(".time"), 
+  inputTime = document.getElementById("value"), 
+  clock = document.getElementById("clock"), 
   playBtn = document.getElementById("play"),
   stopBtn = document.getElementById("stop"),
   alarm = document.getElementById("alarm");
 
-//assign click listener to time designated buttons
-times.forEach(function (time, i) {
-  time.addEventListener("click", setMinutes);
-});
+//initialize click listener for user input
+presetEventListener();
 
-//sets clock to selected time
+//assign click listener to preset buttons
+function presetEventListener() {
+  times.forEach((time, i) => {
+    time.addEventListener("click", setMinutes);
+  });
+}
+
+//clear preset buttons click listener
+function clearPresetEventListener() {
+  times.forEach((time, i) => {
+    time.removeEventListener("click", setMinutes);
+  });
+}
+
+//set clock to selected time
 function setMinutes() {
-  pickedTime = parseInt(this.innerHTML);
+  pickedTime = parseInt(this.textContent);
   if (isNaN(pickedTime)) {
     pickedTime = 0;
   }
-  clearSelected();
-  inputTime.onchange = updateSelectedTime;
-  lastPickedTime = pickedTime;
+  clearSelected(); //clears any attributes assigned to user input buttons
+  inputTime.onchange = updateSelectedTime; //update timer per user input
   updateClock(pickedTime, 0, 0);
   firstClick = true;
   this.style.backgroundColor = "#494949";
   clock.style.color = "white";
 }
 
-//assign user input time to pickedTime
+//assign click listener to Play/Pause button
+playBtn.addEventListener("click", initPlay);
+
+//initialize timer
+function initPlay() {
+
+  //initial setup of timer
+  if (firstClick === true && pickedTime !== 0 && isPaused === true) {
+    isPaused = false;
+    initClock(pickedTime);
+    firstClick = false;
+    playBtn.textContent = "||";
+    clearPresetEventListener();
+  }
+
+  //timer play/pause after initial start
+  else {
+    if (pickedTime !== 0) {
+      isPaused = !isPaused;
+      isPaused ? playBtn.textContent = ">" : playBtn.textContent = "||";
+    }
+  }
+}
+
+//assign click listener to Stop
+stopBtn.addEventListener("click", function () {
+  presetEventListener();
+  resetAttributes();
+  alarm.pause();
+  alarm.currentTime = 0;
+});
+
+function resetAttributes() {
+  isPaused = true;
+  firstClick = true;
+  playBtn.textContent = ">";
+}
+
+//set timer to user inputted time
 function updateSelectedTime() {
+  
   pickedTime = inputTime.value;
+
   //check if input is integer within range
   if (pickedTime < 1 ||
     pickedTime > 60 ||
@@ -45,47 +94,9 @@ function updateSelectedTime() {
   }
   else {
     pickedTime = parseInt(inputTime.value);
-    lastPickedTime = pickedTime;
-    updateClock(pickedTime, 0, 0);
+    firstClick && updateClock(pickedTime, 0, 0);
   }
 }
-
-//assign click listener to Play/Pause button
-playBtn.addEventListener("click", initPlay);
-
-function initPlay() {
-
-  inputTime.setAttribute("id", "");
-  //prevents pausing at first click (which starts timer)
-  if (firstClick === true && pickedTime !== 0 && isPaused === true) {
-    isPaused = false;
-    pickedTime = pickedTime * 60 * 1000;
-    initClock(pickedTime);
-    firstClick = false;
-  }
-  //pauses if timer selected and started
-  else {
-    if (pickedTime !== 0) {
-      isPaused = !isPaused;
-      isPaused ? playBtn.textContent = "||" : playBtn.innerHTML = ">";
-    }
-  }
-}
-
-//assign click listener to Stop
-stopBtn.addEventListener("click", function () {
-  times.forEach(function (time, i) {
-    time.addEventListener("click", setMinutes);
-  });
-  inputTime.setAttribute("id", "value");
-  isPaused = true;
-  playBtn.innerHTML = ">";
-  pickedTime = lastPickedTime;
-  firstClick = true;
-  alarm.pause();
-  alarm.currentTime = 0;
-  // clock.style.color = "white";
-});
 
 //clear attributes of minutes buttons
 function clearSelected() {
@@ -97,8 +108,10 @@ function clearSelected() {
 
 function initClock(t) {
   clearInterval(timeInterval);
-  globalTime = t;
-  var offset = 0;
+  clock.style.color = "white";
+  let globalTime = t * 60 * 1000; //convert to milliseconds
+
+  //start timer
   timeInterval = setInterval(function () {
     if (!isPaused) {
       minutes = Math.floor(globalTime / 1000 / 60);
@@ -109,14 +122,10 @@ function initClock(t) {
 
       if (globalTime <= 0) {
         clearInterval(timeInterval);
-        isPaused = true;
-        firstClick = true;
-        pickedTime = lastPickedTime;
+        resetAttributes();
         clock.style.color = "red";
         alarm.play();
-        times.forEach(function (time, i) {
-          time.addEventListener("click", setMinutes);
-        });
+        presetEventListener();
       }
 
       globalTime -= 10;
@@ -126,7 +135,8 @@ function initClock(t) {
   }, 10);
 }
 
+//update clock display
 function updateClock(m, s, ms) {
-  clock.innerHTML = ("0" + m).slice(-2) + ":" +
+  clock.textContent = ("0" + m).slice(-2) + ":" +
     ("0" + s).slice(-2) + ":" + ("0" + ms).slice(-2);
 }
