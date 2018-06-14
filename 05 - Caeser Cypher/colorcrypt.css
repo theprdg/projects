@@ -1,0 +1,79 @@
+body {
+	margin: 0px 0px;
+	background: #202020;
+	background: -webkit-linear-gradient(45deg, black, white);   /*Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(45deg, black, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	font-family: Helvetica;
+	color: #545454;
+}
+
+#container {
+	width: 100%;
+	height: 40vh;
+}
+
+#container div {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#container .btn {
+	text-align: center;
+	padding: 0px;
+}
+
+#encryptbtn, #decryptbtn {
+	height: 40px;
+	width: 60px;
+	padding: 0;
+	margin: 0 auto;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	color: inherit;
+	font-weight: 700;
+	background: rgba(255,255,255,0.5);
+	transition: all 0.3s;
+}
+
+#encryptbtn:hover, #decryptbtn:hover {
+	background: rgba(255,255,255,1);
+	transition: all 0.3s;
+}
+
+#container div textarea {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40vh;
+	padding: 1px;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.5);
+	border: 15px solid rgba(255,255,255,0);
+	outline: none;
+	border-radius: 10px;
+	font-size: inherit;
+	color: inherit;
+	resize: none;
+}
+
+#container2{
+	float: left;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#output {
+	background: rgba(255,255,255,0.5);
+	width: 100%;
+	height: 49vh;
+	margin: 0 auto;
+	padding: 0;
+	border: 15px solid rgba(255,255,255,0);
+	border-radius: 10px;
+	box-sizing: border-box;
+	overflow: scroll;
+	word-wrap: break-word;
+}

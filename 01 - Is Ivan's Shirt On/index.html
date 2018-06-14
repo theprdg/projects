@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Is Ivan's Shirt On?</title>
+	<script>
+		function randomImg(){
+			var randomNumber = Math.floor(Math.random() * 16) + 1;
+			var imgName = "img" + randomNumber + ".jpg";
+			document.getElementById("imageid").src= "images/" + imgName ;
+		}
+	</script>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+	<div id="title">In this edition of <strong><i>Is-Ivan's-Shirt-On:</i></strong></div>
+	
+	<div id="question">Is Ivan's Shirt On?</div>
+	
+	<div>
+		<img id="imageid" class="displayed">
+		<script>
+			randomImg()
+		</script>
+	</div>
+	
+	<div id="container">
+
+			<a href="wrong.html" class="btn">Yes</a>
+			<a href="right.html" class="btn">No</a>
+
+	</div>
+		
+
+</html>

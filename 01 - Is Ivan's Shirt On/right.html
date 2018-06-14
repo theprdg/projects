@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Is Ivan's Shirt On?</title>
+	<script>
+		function randomImg(){
+			var randomNumber = Math.floor(Math.random() * 7) + 101;
+			var imgName = "img" + randomNumber + ".jpg";
+			document.getElementById("imageid").src= "images/" + imgName ;
+		}
+		
+		function randomTxt(){
+			var randomNumber = Math.floor(Math.random() * 7);
+			var responses = ["You got it!", "Yep! #hawt", "Bingo! Boo-ya!", "And Boom Goes the Dynamite!", "Correctomundo!", "Of Course!", "Would He Have it Any Other Way??"];
+			document.getElementById("question").innerHTML = responses[randomNumber];	
+		}
+	</script>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+	<div class="title">
+		<div id="question">
+			<script>
+				randomTxt()
+			</script>
+		</div>
+	</div>
+	<div>
+		<img id="imageid" class="displayed">
+		<script>
+			randomImg()
+		</script>
+	</div>
+	<div id="container">
+			<a href=index.html class="again">Play Again!</a>
+	</div>
+</html>
