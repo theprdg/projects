@@ -1,0 +1,158 @@
+@import url(//fonts.googleapis.com/css?family=Indie+Flower|Open+Sans:400,600);
+html {
+  min-width: 360px; }
+
+body {
+  font-family: 'Indie Flower', cursive;
+  background: linear-gradient(#343a40, #7e7e7e) no-repeat;
+  background-position: 0 56px;
+  background-attachment: fixed;
+  color: #f0f0f0; }
+
+h1, img, .row, .elem-info, .error, .movie-box {
+  width: 100%; }
+
+a {
+  color: inherit; }
+  a:hover {
+    color: #e6e600;
+    text-decoration: none; }
+
+form, .title, .search, .movie-info {
+  font-family: 'Open Sans',sans-serif; }
+
+form {
+  float: right; }
+
+.navbar-brand {
+  font-size: 1.5rem; }
+
+.container {
+  text-align: center;
+  margin-top: 70px; }
+
+.row {
+  margin: 0; }
+
+.col-12, .error-box {
+  padding: 0; }
+
+.img-box {
+  padding: 20px;
+  box-sizing: border-box; }
+
+.flex, .title, .error-box, .media {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.title {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 30px;
+  font-size: 1.3rem;
+  flex-direction: column;
+  position: absolute;
+  color: rgba(0, 0, 0, 0);
+  transition: all 0.2s linear;
+  box-sizing: border-box; }
+
+a:hover .title {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #e6e600;
+  transition: all 0.2s linear; }
+
+.search, .media-body.movie-box, .title, .error {
+  text-align: left; }
+
+.result-title {
+  font-weight: 600;
+  font-size: 3vw; }
+
+.result-elem {
+  padding: 30px 20px;
+  border-bottom: 1px solid white; }
+
+.media-left {
+  width: 20%; }
+
+.media-body {
+  padding-left: 20px; }
+
+.overview {
+  margin: 0; }
+
+.movie-info {
+  margin-top: 8%; }
+
+.movie-box {
+  width: 50%; }
+
+.movie-details {
+  font-size: 1rem; }
+
+.media-body, .movie-img {
+  width: 80%; }
+
+.elem-info {
+  display: block;
+  padding: 3%;
+  border-bottom: 1px solid #f0f0f0; }
+
+.last {
+  border: none; }
+
+.left {
+  float: left;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.75rem;
+  opacity: 0.5;
+  letter-spacing: -2px; }
+
+.right {
+  float: right;
+  max-width: 60%;
+  text-align: justify; }
+
+.error {
+  position: absolute;
+  color: inherit;
+  font-size: 2rem;
+  padding: 0 40px; }
+
+.error-box {
+  flex-direction: column;
+  margin-top: 0;
+  height: 100vh; }
+
+@media screen and (max-width: 768px) {
+  .movie-info {
+    margin-top: 60px; }
+  .movie-details {
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%; }
+  .media-body {
+    padding: 0 20px; }
+  .media-right {
+    margin: 20px 0;
+    width: 80%; }
+  .left {
+    font-size: 5vw;
+    line-height: 5vw; } }
+
+@media screen and (max-width: 560px) {
+  h1 {
+    font-size: 7vw; }
+  .container {
+    margin-top: 20%; }
+  .error-box {
+    margin: 0; }
+  .title, h4 {
+    font-size: 4vw; }
+  .overview {
+    font-size: 3vw; }
+  .result-title {
+    font-size: 1rem; } }

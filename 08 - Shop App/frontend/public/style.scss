@@ -1,0 +1,201 @@
+@import url(//fonts.googleapis.com/css?family=Oswald:400,500,700);
+$box-bg-color: rgba(0,0,0,0.5);
+$box-bg: url(./img/bg.png);
+$def-color: rgb(240,240,240);
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+  color: $def-color;
+  text-decoration: none;
+  min-width: 360px;
+}
+
+a {
+  color: $def-color;
+  font-size: 1.5rem;
+}
+
+//FORM INPUT BOX
+input {
+  border: none;
+  border-bottom: 2px solid white;
+  background: rgba(0,0,0,0);
+  caret-color: $def-color;
+  color: inherit;
+  text-align: center;
+  height: 50px;
+  width: 30vw;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.loginBtn {
+  background: rgba(0,0,0,0);
+  border: none;
+  color: $def-color;
+  font-size: 2rem;
+}
+
+//LOGIN PLACEHOLDER TEXT COLOR
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(200,200,200,0.8);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(200,200,200,0.8);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(200,200,200,0.8);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: rgba(200,200,200,0.8);
+}
+
+a:hover {
+  color: $def-color;
+}
+
+.navbar {
+  background: $box-bg;
+  display: flex;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 10vh;
+
+  .and {
+    color: red;
+  }
+}
+
+//HOME AND SHOP LINKS AT TOP RIGHT OF PAGE
+.menu {
+  text-align: right;
+}
+
+//LOGIN CONTAINER
+.centerBox {
+  display: flex;
+  width: 100vw;
+  height: 50vh;
+  min-width: 360px;
+  background: $box-bg;
+  position: absolute;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  top: 20vh;
+
+  .loginTitle {
+    font-size: 5vw;
+  }
+
+  .loginMsg {
+    font-size: 0.9rem;
+    color: grey;
+  }
+}
+
+//SUB MENU (HATS, SHOES, CART)
+.subMenu {
+  width: calc(33.3% - 2*5px);
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 10px 5px;
+  background: $box-bg-color;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.subMenu:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+//SHOP CONTAINER FOR HATS/SHOES PAGE
+.shopBox {
+  @extend .centerBox;
+  top: 0;
+  height: 70vh;
+  overflow: scroll;
+  position: relative;
+  justify-content: center;
+  border: 15px solid rgba(0,0,0,0);
+}
+
+//DEFAULT SHOP CONTAINER
+.shopSplashBox {
+  height: 100%;
+  background: none;
+  font-size: 4vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: calc(100vw - 30px);
+}
+
+.shopMenuImg {
+  width: 250px;
+  margin: 10px;
+}
+
+//ORGANIZING CONTAINER FOR CATALOGUE
+.grid {
+  width: calc(100vw - 30px);
+  margin: 0 auto;
+  justify-content: center;
+}
+
+//PRODUCT ITEM CONTAINER
+.product {
+  margin-bottom: 30px;
+  border: 5px solid rgba(0,0,0,0.5);
+  max-width: 450px;
+  margin: 15px;
+  padding: 15px;
+}
+
+//PRODUCT IMAGE RESPONSIVENESS PROPERTIES
+.img-responsive {
+  max-width: 100%;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+//ADD TO CART BUTTON
+.cartBtn {
+  @extend .subMenu;
+  border: none;
+  color: inherit;
+  width: 100px;
+}
+
+//CART CONTAINER
+.cartBox {
+  height: 100%;
+}
+
+.footer {
+  width: 100vw;
+  height: 30px;
+  line-height: 30px;
+  background: $box-bg-color;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  text-align: center;
+}
+
+.welcomeMsg {
+  font-size: 1rem;
+  justify-content: center;
+}
+
+.logout {
+  float: right;
+  padding-right: 10px;
+  font-size: 1rem;
+}

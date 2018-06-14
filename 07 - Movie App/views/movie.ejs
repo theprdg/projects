@@ -1,0 +1,67 @@
+<% include partials/header %>
+
+  <div class="container movie-info">
+    <div class="row">
+      <div class="col-12">
+        <div class="media movie-details">
+          <div class="media-body movie-box">
+            <div class="element-box">
+              <div class="elem-info clearfix">
+                <span class="left">title</span>
+                <span class="right">
+                  <%= movies.title %>
+                </span>
+              </div>
+              <div class="elem-info clearfix">
+                <span class="left">original title</span>
+                <span class="right">
+                  <%= movies.original_title %>
+                </span>
+              </div>
+              <div class="elem-info clearfix">
+                <span class="left">rating</span>
+                <span class="right">
+                  <%= movies.vote_average %> / 10
+                </span>
+              </div>
+              <div class="elem-info clearfix">
+                <span class="left">runtime</span>
+                <span class="right">
+                  <%= movies.runtime %> min.
+                </span>
+              </div>
+              <div class="elem-info clearfix">
+                <span class="left">release date</span>
+                <span class="right date">
+                  <%= movies.release_date %>
+                </span>
+              </div>
+              <div class="elem-info clearfix">
+                <span class="left">budget</span>
+                <span class="right dollars">
+                  <%= movies.budget %>
+                </span>
+              </div>
+              <div class="elem-info clearfix">
+                <span class="left">revenue</span>
+                <span class="right dollars">
+                  <%= movies.revenue %>
+                </span>
+              </div>
+              <div class="elem-info clearfix last">
+                <span class="left">overview</span>
+                <span class="right">
+                  <%= movies.overview %>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="media-right media-top movie-box">
+            <img class="media-object movie-img" src="http://image.tmdb.org/t/p/w500/<%= movies.poster_path %>">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include partials/footer %>

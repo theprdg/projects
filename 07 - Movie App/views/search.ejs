@@ -1,0 +1,63 @@
+<% include partials/header %>
+
+  <div class="container search">
+    <div class="row">
+      <div class="result-title">
+        <%= movies.length %> results found for '<%= query %>'
+      </div>
+      <% for (let i = 0; i < movies.length - 1; i++) { %>
+        <div class="col-12">
+          <a href="/movie/<%= movies[i].id %>">
+            <div class="media result-elem">
+              <div class="media-left media-top">
+                <% if (movies[i].poster_path == null) { %>
+                  <img class="media-object img-responsive" src="https://www.nilfiskcfm.com/wp-content/uploads/2016/12/placeholder.png">
+                  <% } else {%>
+                    <img class="media-object img-responsive" src="http://image.tmdb.org/t/p/w154/<%= movies[i].poster_path %>">
+                    <% } %>
+              </div>
+              <div class="media-body">
+                <h4>
+                  <%= movies[i].title %> | Rating:
+                    <strong>
+                      <%= movies[i].vote_average %>
+                    </strong>
+                </h4>
+                <p class="overview">
+                  <%= movies[i].overview %>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>
+      <% if (movies.length !== 0) { %>
+        <div class="col-12">
+          <a href="/movie/<%= movies[movies.length - 1].id %>">
+            <div class="media result-elem last">
+              <div class="media-left media-top">
+                <% if (movies[movies.length - 1].poster_path == null) { %>
+                  <img class="media-object img-responsive" src="https://www.nilfiskcfm.com/wp-content/uploads/2016/12/placeholder.png">
+                <% } else {%>
+                  <img class="media-object img-responsive" src="http://image.tmdb.org/t/p/w154/<%= movies[movies.length - 1].poster_path %>">
+                <% } %>
+              </div>
+              <div class="media-body">
+                <h4>
+                  <%= movies[movies.length - 1].title %> | Rating:
+                    <strong>
+                      <%= movies[movies.length - 1].vote_average %>
+                    </strong>
+                </h4>
+                <p class="overview">
+                  <%= movies[movies.length - 1].overview %>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+<% include partials/footer %>

@@ -1,0 +1,31 @@
+<% include partials/header %>
+
+  <div class="container">
+    <div class="row">
+      <h1>
+        <u>A FEW TOP-RATED MOVIES</u>
+      </h1>
+      <% for (let i = 0; i < movies.length; i++) { %>
+        <div class="col-md-12 col-lg-6 img-box">
+          <a href="/movie/<%= movies[i].id %>">
+            <div class="media">
+              <img class="media-object img-responsive" src="http://image.tmdb.org/t/p/w780/<%= movies[i].poster_path %>">
+              <div class="title">
+                <div>
+                  <p>
+                    <%= movies[i].overview %>
+                  </p>
+                </div>
+                <div>
+                  <strong>Viewer Rating:
+                    <%= movies[i].vote_average %> / 10</strong>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+<% include partials/footer %>
