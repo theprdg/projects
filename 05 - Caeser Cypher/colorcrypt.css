@@ -1,10 +1,11 @@
 body {
-	margin: 0px 0px;
+  margin: 0px 0px;
 	background: #202020;
 	background: -webkit-linear-gradient(45deg, black, white);   /*Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(45deg, black, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-family: Helvetica;
-	color: #545454;
+  color: #545454;
+  height: 100vh;
 }
 
 #container {
