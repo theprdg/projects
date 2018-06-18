@@ -1,3 +1,6 @@
+//two guys walk into a bar.
+//the third one ducks.
+
 let request = require("request"),
   cheerio = require("cheerio"),
   info,                 //contains the TMDB JSON data 
