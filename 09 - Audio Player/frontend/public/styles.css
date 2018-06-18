@@ -10,8 +10,9 @@ a {
   text-decoration: underline solid transparent;
   transition: text-decoration 1s ease;
   color: white; }
-  a:hover {
-    text-decoration: underline solid currentColor; }
+
+a:hover {
+  text-decoration: underline solid currentColor; }
 
 .fullscreen-bg {
   position: fixed;
@@ -38,8 +39,9 @@ a {
 .menu, .timeBox {
   margin-top: -3.35vw;
   margin-left: -.6vw; }
-  .menu:first-of-type, .timeBox:first-of-type {
-    margin-top: -1.6vw; }
+
+.menu:first-of-type, .timeBox:first-of-type {
+  margin-top: -1.6vw; }
 
 .headText, .tailText, .timeBox {
   font-size: 8vw;
@@ -81,13 +83,13 @@ a {
   margin-left: 1vw; }
 
 .playBtn, .playDetailBtn {
-  border: 1.5px solid white;
+  border: 2px solid white;
   background: transparent;
   color: inherit;
-  height: 3vw;
-  width: 3vw;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  font-size: 2vw;
+  font-size: 1.5rem;
   padding: 0;
   padding-bottom: 0.2vw; }
 
@@ -96,7 +98,7 @@ a {
   opacity: 0.75; }
 
 .songItem {
-  font-size: 4vw;
+  font-size: 3rem;
   padding-left: 1vw; }
 
 .songDetailBox {
@@ -139,22 +141,6 @@ a {
     background: url("/img/videobg.jpg") center center/cover no-repeat; }
   .fullscreen-bg__video {
     display: none; }
-  .menu, .timeBox {
-    margin-top: -1.25rem;
-    margin-left: -.15rem; }
-    .menu:first-of-type, .timeBox:first-of-type {
-      margin-top: -.55rem; }
-  .headText, .tailText, .time, .songName {
-    font-size: 3rem; }
-  .time {
-    width: 9rem; }
-  .playBtn, .playDetailBtn {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1rem;
-    border: 1px solid white; }
-  .songItem {
-    font-size: 2rem; }
   .songDetail {
     display: block;
     margin-top: 2vw; }
