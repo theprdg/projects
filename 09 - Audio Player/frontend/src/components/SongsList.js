@@ -8,15 +8,14 @@ class SongsList extends Component {
       let link = "/" + song.id;
       return (
         <div 
-          //I NEED TO EXPLAIN TO YOU WHY KEY IS SET TO INDEX AND NOT DATE()
           key={index} 
           className="songItemBox">
 
           {/* PLAY BUTTON */}
           <button 
             className="playBtn"
-            onClick={() => this.props.playThisSong(song.id, song.title, song.source)}>
-            >
+            onClick={() => 
+              this.props.playThisSong(song.id, song.title, song.source)}>>
           </button>
           <Link to={link}>
             <Song song={song} />

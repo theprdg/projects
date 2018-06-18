@@ -12,10 +12,10 @@ a {
   text-decoration: underline solid transparent;
   transition: text-decoration 1s ease;
   color: white;
-}
-
-a:hover {
-  text-decoration: underline solid currentColor;
+  
+  &:hover {
+    text-decoration: underline solid currentColor;
+  }
 }
 
 //BACKGROUND
@@ -47,11 +47,12 @@ a:hover {
 .menu {
   margin-top: -3.35vw;
   margin-left: -.6vw;
-}
+
   //position first line along top edge
-  .menu:first-of-type {
+  &:first-of-type {
     margin-top: -1.6vw;
   }
+}
 
   .headText, .tailText, .timeBox {
     font-size: 8vw;
@@ -109,13 +110,13 @@ a:hover {
   }
 
   .playBtn {
-    border: 2px solid white;
+    border: 1.5px solid white;
     background: transparent;
     color: inherit;
-    height: 40px;
-    width: 40px;
+    height: 3vw;
+    width: 3vw;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 2vw;
     padding: 0;
     padding-bottom: 0.2vw;
     @extend .ease;
@@ -128,7 +129,7 @@ a:hover {
 
   //song title
   .songItem {
-    font-size: 3rem;
+    font-size: 4vw;
     padding-left: 1vw;
   }
 
@@ -169,12 +170,12 @@ a:hover {
       border: 0.12vw solid white;
       padding-bottom: 0.2vw;
       margin-top: 1vw;
-    }
 
-    .playDetailBtn:hover {
-      @extend .playBtn:hover;
+      &:hover {
+        @extend .playBtn:hover;
+      }
     }
-
+    
     .description {
       margin: 2vw auto;
       font-size: 2.5vw;
@@ -184,7 +185,9 @@ a:hover {
   cursor: pointer;
 }
 
+//*******RESPONSIVENESS*******//
 @media (max-width: 700px) {
+
   .fullscreen-bg {
       background: url('/img/videobg.jpg') center center / cover no-repeat;
   }
@@ -193,6 +196,35 @@ a:hover {
         display: none;
     }
   
+  .menu {
+    margin-top: -1.25rem;
+    margin-left: -.15rem;
+  
+    //position first line along top edge
+    &:first-of-type {
+      margin-top: -.55rem;
+    }
+  }
+
+  .headText, .tailText, .time, .songName {
+    font-size: 3rem;
+  }
+  
+  .time {
+    width: 9rem;
+  }
+
+  .playBtn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: 1px solid white;
+  }
+
+  .songItem {
+    font-size: 2rem;
+  }
+
   .songDetail {
     display: block;
     margin-top: 2vw;

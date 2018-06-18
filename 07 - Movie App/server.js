@@ -1,5 +1,3 @@
-//WHAT ANIMAL WOULD BEST REPRESENT YOUR DAY?
-
 const express = require('express'),
   app = express(),
   request = require('request');
