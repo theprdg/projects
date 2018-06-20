@@ -1,0 +1,1 @@
+A CLI number guessing game using Node and Javascript. User inputs a maximum number in which the app would generate a random winning number between 0 and this max number for the user to guess. The app will inform the user whether their guess is too high or too low. Simple statistics of the user's experience is generated when the user wins.
