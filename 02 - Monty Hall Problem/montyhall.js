@@ -1,6 +1,6 @@
 var doors = document.querySelectorAll(".door"),
-	winDoor = Math.floor(Math.random()*3),
-	pickedDoor,
+	winDoor = Math.floor(Math.random()*3), //random selection of winning door
+	pickedDoor, //user selected door
 	doorCount = 0, 
 	revealDoor, 
 	clickCount = 0, 
