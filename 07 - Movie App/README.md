@@ -1,0 +1,1 @@
+Using EJS, express and request, I created a responsive sample movie database site pulling data from The Movie Database API. The main page displays the top rated movies in TMDB and the user can click into each of the movies for further details.
