@@ -67,5 +67,4 @@ request('https://api.themoviedb.org/3/movie/top_rated?api_key=1754ff7b172042ad1d
 //INITIATE SERVER
 app.listen(8080, () => {
   console.log('Server Started on http://localhost:8080');
-  console.log('Press CTRL + C to stop server');
 });
