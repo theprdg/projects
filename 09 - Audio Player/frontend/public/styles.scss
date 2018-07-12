@@ -12,10 +12,10 @@ a {
   text-decoration: underline solid transparent;
   transition: text-decoration 1s ease;
   color: white;
-}
-
-a:hover {
-  text-decoration: underline solid currentColor;
+  
+  &:hover {
+    text-decoration: underline solid currentColor;
+  }
 }
 
 //BACKGROUND
@@ -27,7 +27,6 @@ a:hover {
   left: 0;
   overflow: hidden;
   z-index: -100;
-}
 
   .fullscreen-bg__video {
     position: absolute;
@@ -42,22 +41,16 @@ a:hover {
         -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
   }
+}
 
 //AUDIO PLAYER
 .menu {
   margin-top: -3.35vw;
   margin-left: -.6vw;
-}
-  //position first line along top edge
-  .menu:first-of-type {
-    margin-top: -1.6vw;
-  }
 
-  .headText, .tailText, .timeBox {
-    font-size: 8vw;
-    letter-spacing: -0.5vw;
-    opacity: 0.5;
-    @extend .ease;
+  //position first line along top edge
+  &:first-of-type {
+    margin-top: -1.6vw;
   }
 
   .headText:hover {
@@ -78,6 +71,14 @@ a:hover {
     opacity: .75;
     font-size: 8vw;
     letter-spacing: -0.5vw;
+  }
+}
+
+  .headText, .tailText, .timeBox {
+    font-size: 8vw;
+    letter-spacing: -0.5vw;
+    opacity: 0.5;
+    @extend .ease;
   }
 
   //container of song runtime and duration
@@ -109,26 +110,26 @@ a:hover {
   }
 
   .playBtn {
-    border: 2px solid white;
+    border: 1.5px solid white;
     background: transparent;
     color: inherit;
-    height: 40px;
-    width: 40px;
+    height: 3vw;
+    width: 3vw;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 2vw;
     padding: 0;
     padding-bottom: 0.2vw;
     @extend .ease;
-  }
 
-  .playBtn:hover {
-    background: cornflowerblue;
-    opacity: 0.75;
+    &:hover {
+      background: cornflowerblue;
+      opacity: 0.75;
+    }
   }
 
   //song title
   .songItem {
-    font-size: 3rem;
+    font-size: 4vw;
     padding-left: 1vw;
   }
 
@@ -137,8 +138,7 @@ a:hover {
   display: flex;
   background: rgba(0,0,0,0.25);
   padding: 2vw;
-}
-  
+
   //album cover
   .album {
     min-width: 325px;
@@ -152,7 +152,6 @@ a:hover {
   //song details
   .details {
     padding: 0 1.5vw;
-  }
     
     .songTitle {
       display: inline-block;
@@ -169,57 +168,95 @@ a:hover {
       border: 0.12vw solid white;
       padding-bottom: 0.2vw;
       margin-top: 1vw;
-    }
 
-    .playDetailBtn:hover {
-      @extend .playBtn:hover;
+      &:hover {
+        @extend .playBtn:hover;
+      }
     }
-
+    
     .description {
       margin: 2vw auto;
       font-size: 2.5vw;
     }
+  }
+}
  
 .headText, .songList, .playBtn, .playDetailBtn {
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
+//*******RESPONSIVENESS*******//
+@media (max-width: 600px) {
+
   .fullscreen-bg {
       background: url('/img/videobg.jpg') center center / cover no-repeat;
-  }
 
-    .fullscreen-bg__video {
+      .fullscreen-bg__video {
         display: none;
     }
   
+  }
+
+  .menu {
+    margin-top: -1.25rem;
+    margin-left: -.15rem;
+  
+    //position first line along top edge
+    &:first-of-type {
+      margin-top: -.55rem;
+    }
+  }
+
+  .headText, .tailText, .time, .songName {
+    font-size: 3rem;
+  }
+  
+  .time {
+    width: 9rem;
+  }
+
+  .playBtn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: 1px solid white;
+  }
+
+  .songItem {
+    font-size: 2rem;
+  }
+
   .songDetail {
     display: block;
     margin-top: 2vw;
   }
 
-  .details {
-    margin: 0 auto;
-    width: 55vw;
-  }
+  .songDetailBox {
+    display: block;
 
-  .album {
-    margin: 3vw auto;
-    max-width: 325px;
-  }
+    .details, .album {
+      max-width: 70%;
+      margin: 2vw auto;
+      min-width: 0;
+    }
 
-  .songTitle {
-    font-size: 7vw;
-  }
+    .details {
+      margin: 0 auto;
   
-  .playDetailBtn {
-    height: 5vw;
-    width: 5vw;
-    font-size: 3vw;
-    border: 1px solid white;
-  }
-
-  .description {
-    font-size: 4.5vw;
+      .songTitle {
+        font-size: 6vw;
+      }
+  
+      .description {
+        font-size: 3.5vw;
+      }
+  
+      .playDetailBtn {
+        height: 5vw;
+        width: 5vw;
+        font-size: 3vw;
+        border: 1px solid white;
+      }
+    }
   }
 }

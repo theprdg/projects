@@ -10,9 +10,8 @@ a {
   text-decoration: underline solid transparent;
   transition: text-decoration 1s ease;
   color: white; }
-
-a:hover {
-  text-decoration: underline solid currentColor; }
+  a:hover {
+    text-decoration: underline solid currentColor; }
 
 .fullscreen-bg {
   position: fixed;
@@ -22,46 +21,41 @@ a:hover {
   left: 0;
   overflow: hidden;
   z-index: -100; }
-
-.fullscreen-bg__video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: auto;
-  min-width: 100%;
-  min-height: 100%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
+  .fullscreen-bg .fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
 
 .menu, .timeBox {
   margin-top: -3.35vw;
   margin-left: -.6vw; }
-
-.menu:first-of-type, .timeBox:first-of-type {
-  margin-top: -1.6vw; }
+  .menu:first-of-type, .timeBox:first-of-type {
+    margin-top: -1.6vw; }
+  .menu .headText:hover, .timeBox .headText:hover {
+    opacity: 1; }
+  .menu .ease, .timeBox .ease, .menu .headText, .timeBox .headText, .menu .tailText, .timeBox .tailText, .menu .timeBox, .timeBox .timeBox, .menu .playBtn, .timeBox .playBtn, .menu .songDetailBox .details .playDetailBtn, .songDetailBox .details .menu .playDetailBtn, .timeBox .songDetailBox .details .playDetailBtn, .songDetailBox .details .timeBox .playDetailBtn {
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out; }
+  .menu .songName, .timeBox .songName {
+    color: cornflowerblue;
+    opacity: .75;
+    font-size: 8vw;
+    letter-spacing: -0.5vw; }
 
 .headText, .tailText, .timeBox {
   font-size: 8vw;
   letter-spacing: -0.5vw;
   opacity: 0.5; }
-
-.headText:hover {
-  opacity: 1; }
-
-.ease, .headText, .tailText, .timeBox, .playBtn, .playDetailBtn {
-  transition: all 0.5s ease-in-out;
-  -moz-transition: all .5s ease-out;
-  -webkit-transition: all .5s ease-out;
-  -o-transition: all .5s ease-out; }
-
-.songName {
-  color: cornflowerblue;
-  opacity: .75;
-  font-size: 8vw;
-  letter-spacing: -0.5vw; }
 
 .timeBox {
   opacity: 1;
@@ -82,80 +76,92 @@ a:hover {
   margin-bottom: 1vw;
   margin-left: 1vw; }
 
-.playBtn, .playDetailBtn {
-  border: 2px solid white;
+.playBtn, .songDetailBox .details .playDetailBtn {
+  border: 1.5px solid white;
   background: transparent;
   color: inherit;
-  height: 40px;
-  width: 40px;
+  height: 3vw;
+  width: 3vw;
   border-radius: 50%;
-  font-size: 1.5rem;
+  font-size: 2vw;
   padding: 0;
   padding-bottom: 0.2vw; }
-
-.playBtn:hover, .playDetailBtn:hover {
-  background: cornflowerblue;
-  opacity: 0.75; }
+  .playBtn:hover, .songDetailBox .details .playDetailBtn:hover {
+    background: cornflowerblue;
+    opacity: 0.75; }
 
 .songItem {
-  font-size: 3rem;
+  font-size: 4vw;
   padding-left: 1vw; }
 
 .songDetailBox {
   display: flex;
   background: rgba(0, 0, 0, 0.25);
   padding: 2vw; }
+  .songDetailBox .album {
+    min-width: 325px;
+    height: auto; }
+    .songDetailBox .album img {
+      width: 100%; }
+  .songDetailBox .details {
+    padding: 0 1.5vw; }
+    .songDetailBox .details .songTitle {
+      display: inline-block;
+      font-size: 4vw;
+      vertical-align: middle;
+      margin-top: -1vw; }
+    .songDetailBox .details .playDetailBtn {
+      height: 3vw;
+      width: 3vw;
+      font-size: 2vw;
+      border: 0.12vw solid white;
+      padding-bottom: 0.2vw;
+      margin-top: 1vw; }
+    .songDetailBox .details .description {
+      margin: 2vw auto;
+      font-size: 2.5vw; }
 
-.album {
-  min-width: 325px;
-  height: auto; }
-  .album img {
-    width: 100%; }
-
-.details {
-  padding: 0 1.5vw; }
-
-.songTitle {
-  display: inline-block;
-  font-size: 4vw;
-  vertical-align: middle;
-  margin-top: -1vw; }
-
-.playDetailBtn {
-  height: 3vw;
-  width: 3vw;
-  font-size: 2vw;
-  border: 0.12vw solid white;
-  padding-bottom: 0.2vw;
-  margin-top: 1vw; }
-
-.description {
-  margin: 2vw auto;
-  font-size: 2.5vw; }
-
-.headText, .songList, .playBtn, .playDetailBtn, .playDetailBtn {
+.headText, .songList, .playBtn, .songDetailBox .details .playDetailBtn, .playDetailBtn {
   cursor: pointer; }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .fullscreen-bg {
     background: url("/img/videobg.jpg") center center/cover no-repeat; }
-  .fullscreen-bg__video {
-    display: none; }
+    .fullscreen-bg .fullscreen-bg__video {
+      display: none; }
+  .menu, .timeBox {
+    margin-top: -1.25rem;
+    margin-left: -.15rem; }
+    .menu:first-of-type, .timeBox:first-of-type {
+      margin-top: -.55rem; }
+  .headText, .tailText, .time, .songName {
+    font-size: 3rem; }
+  .time {
+    width: 9rem; }
+  .playBtn, .songDetailBox .details .playDetailBtn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    border: 1px solid white; }
+  .songItem {
+    font-size: 2rem; }
   .songDetail {
     display: block;
     margin-top: 2vw; }
-  .details {
-    margin: 0 auto;
-    width: 55vw; }
-  .album {
-    margin: 3vw auto;
-    max-width: 325px; }
-  .songTitle {
-    font-size: 7vw; }
-  .playDetailBtn {
-    height: 5vw;
-    width: 5vw;
-    font-size: 3vw;
-    border: 1px solid white; }
-  .description {
-    font-size: 4.5vw; } }
+  .songDetailBox {
+    display: block; }
+    .songDetailBox .details, .songDetailBox .album {
+      max-width: 70%;
+      margin: 2vw auto;
+      min-width: 0; }
+    .songDetailBox .details {
+      margin: 0 auto; }
+      .songDetailBox .details .songTitle {
+        font-size: 6vw; }
+      .songDetailBox .details .description {
+        font-size: 3.5vw; }
+      .songDetailBox .details .playDetailBtn {
+        height: 5vw;
+        width: 5vw;
+        font-size: 3vw;
+        border: 1px solid white; } }
