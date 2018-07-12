@@ -55,18 +55,16 @@ select {
   background: rgba(255, 255, 255, 0.8);
   margin: 0 3px 1px 3px;
   border: 0; }
+  .li-box .done {
+    text-decoration: line-through;
+    color: grey; }
+  .li-box .category {
+    float: right;
+    width: 25%; }
 
 .list-group-item:first-child,
 .list-group-item:last-child {
   border-radius: 0; }
-
-.done {
-  text-decoration: line-through;
-  color: grey; }
-
-.category {
-  float: right;
-  width: 25%; }
 
 @media screen and (max-width: 640px) {
   h1 {

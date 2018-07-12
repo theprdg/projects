@@ -68,24 +68,24 @@ select {
   background: $box-bg-color;
   margin: 0 3px 1px 3px;
   border: 0;
+
+  //COMPLETED ITEMS
+  .done {
+    text-decoration: line-through;
+    color: grey;
+  }
+
+  //ITEMS LIST CATEGORY
+  .category {
+    float: right;
+    width: 25%;
+  }
 }
 
 //REMOVE BORDER-RADII
 .list-group-item:first-child,
 .list-group-item:last-child {
   border-radius: 0
-}
-
-//COMPLETED ITEMS
-.done {
-  text-decoration: line-through;
-  color: grey;
-}
-
-//ITEMS LIST CATEGORY
-.category {
-  float: right;
-  width: 25%;
 }
 
 @media screen and (max-width: 640px) {
